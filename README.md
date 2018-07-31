@@ -24,13 +24,25 @@ to 16 level grayscale. The output is tested on a Tiptel IP 286. The display in t
 
 ## Usage
 
+### Command line
+
 ```bash
 # Convert logo to .dob without resizing
-$ ./convert.py logo.png logo.dob
+$ DOB/convert.py logo.png logo.dob
 
 # Convert logo to .dob for a Tiptel IP 286
-$ ./convert.py -p ip286 logo.png logo.dob
+$ DOB/convert.py -p ip286 logo.png logo.dob
 
 # Convert .dob back to a .png
-$ ./convert.py -r logo.dob logo.png
+$ DOB/convert.py -r logo.dob logo.png
 ```
+
+### Package
+
+```python
+# Convert logo to .dob for a T28
+from DOB import img_to_dob, presets
+
+img_to_dob(infile=open("myimg.png",'rb'), outfile=open("phonelogo.dob",'wb'), preset=presets['t28'])
+```
+
